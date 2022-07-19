@@ -1,0 +1,75 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/** Modal */
+.modal-dialog {
+    margin-top: 4%;
+}
+.modal-header {
+    margin-top: -14px;
+}
+
+.modal .modal-content .card {
+    margin-top: 0;
+}
+
+.modal .modal-header .card-header {
+    margin-left: 10px;
+    width: 80%;
+}
+
+.modal .card div.card-header {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+}
+#modalPopupCloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    margin-right: 0;
+    padding-top: 24px;
+}
+
+/*Sidebar */
+.sidebar .logo .simple-text {
+    font-size: 18px;
+}
+
+.sidebar .nav p {
+    transition: none;
+}
+
+.sidebar .nav li .dropdown-menu a:hover, .sidebar .nav li a:hover {
+    background-color: #123a63;
+    color: #fff;
+    box-shadow: 0 4px 20px 0px rgba(0,0,0,0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+}
+
+.sidebar .nav li .dropdown-menu a.active {
+    color: #fff;
+}
+
+/** Site Logo */
+#site-logo {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}

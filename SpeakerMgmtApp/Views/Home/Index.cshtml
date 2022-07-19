@@ -1,0 +1,57 @@
+﻿@*
+@model SpeakerViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <i class="fas fa-tasks fa-2x"></i>
+            <h4 class="cardHeaderIconStyle"> Speakers</h4>
+        </div>
+        <div class="card-body">
+            <div class="card-body">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Speaker Photo</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 0;  
+                            }
+                            @foreach(var item in Model.Speakers)
+                            {
+                                <tr>
+                                    <td class="text-center">@(i = i + 1)</td>
+                                    <td>@item.SpeakerFirstName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+                            @section scripts{
+                                <style>
+                                    .cardHeaderIconStyle {
+                                        display: inline-block;
+                                        padding-right;
+                                        width: 200px;
+                                    }
+                                </style>
+                            }

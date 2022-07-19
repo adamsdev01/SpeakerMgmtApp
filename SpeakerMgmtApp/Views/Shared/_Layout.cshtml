@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Template</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/mvc-grid/mvc-grid.css" />
+    <link rel="stylesheet" href="~/lib/material-dashboard/css/material-dashboard.css" />
+
+</head>
+<body>
+    <div class="wrapper">
+        <<partial name="_Sidebar" />
+        <div class="main-panel">
+            <partial name="_TopNavBar" />
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <div id="loading-animation"></div>
+            <hr />
+              <footer class="border-top footer text-muted">
+                <div class="container">
+                    <p class="text-center">&copy; @DateTime.Now.Year - Template</p>
+                </div>
+             </footer>          
+        </div>
+    </div>
+    <partial name="_Modal" />
+    <partial name="_FooterJs" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
