@@ -18,6 +18,8 @@ namespace SpeakerMgmtApp.Models
         public string? ProfilePictureFileType { get; set; }
         public string? ProfilePrictureExtension { get; set; }
         public string? ProfilePictureDescription { get; set; }
+        public byte[]? ProfilePictureData { get; set; }
+
         public string? HotelName { get; set; }
         public string? ContactFirstName { get; set; }
         public string? ContactLastName { get; set; }

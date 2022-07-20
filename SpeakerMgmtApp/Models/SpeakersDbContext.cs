@@ -63,6 +63,8 @@ namespace SpeakerMgmtApp.Models
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
+                entity.Property(e => e.ProfilePictureData).HasColumnType("varbinary(max)");
+
                 entity.Property(e => e.ProfilePictureDescription)
                     .HasMaxLength(500)
                     .IsUnicode(false);

@@ -1,0 +1,130 @@
+﻿@model SpeakerViewModel
+
+<div class="card">
+    <h4>Speaker Info</h4>
+    <div class="card-body">
+        <form asp-action="Create" asp-controller="Speakers" method="post" enctype="multipart/form-data">
+            <input hidden id="Id" asp-for="@Model.Speaker.Id" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="SpeakerFirstName" class="control-label"></label>
+                        <input asp-for="SpeakerFirstName" class="form-control" />
+                        <span asp-validation-for="SpeakerFirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="SpeakerLastName" class="control-label"></label>
+                        <input asp-for="SpeakerLastName" class="form-control" />
+                        <span asp-validation-for="SpeakerLastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Qualification" class="control-label"></label>
+                        <input asp-for="Qualification" class="form-control" />
+                        <span asp-validation-for="Qualification" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Experience" class="control-label"></label>
+                        <input asp-for="Experience" class="form-control" />
+                        <span asp-validation-for="Experience" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="SpeakerPicture" class="control-label"></label>
+                    </div>
+                    <input type="file" asp-for="SpeakerPicture"  />
+                </div>       
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="SpeakingDate" class="control-label"></label>
+                        <input asp-for="SpeakingDate" class="form-control" />
+                        <span asp-validation-for="SpeakingDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="SpeakingTime" class="control-label"></label>
+                        <input asp-for="SpeakingTime" class="form-control" />
+                        <span asp-validation-for="SpeakingTime" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Venue" class="control-label"></label>
+                        <input asp-for="Venue" class="form-control" />
+                        <span asp-validation-for="Venue" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+            <br />
+            <h4>Contact Info</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactFirstName" class="control-label"></label>
+                        <input asp-for="ContactFirstName" class="form-control" />
+                        <span asp-validation-for="ContactFirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactLastName" class="control-label"></label>
+                        <input asp-for="ContactLastName" class="form-control" />
+                        <span asp-validation-for="ContactLastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactEmail" class="control-label"></label>
+                        <input asp-for="ContactEmail" class="form-control" />
+                        <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactPhoneNumber" class="control-label"></label>
+                        <input asp-for="ContactPhoneNumber" class="form-control" />
+                        <span asp-validation-for="ContactPhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="HotelName" class="control-label"></label>
+                        <input asp-for="HotelName" class="form-control" />
+                        <span asp-validation-for="HotelName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" asp-action="Create" class="btn btn-sm btn-primary rounded-0" />
+                <a asp-action="Index" class="btn btn-sm btn-primary rounded-0">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts {
+
+}

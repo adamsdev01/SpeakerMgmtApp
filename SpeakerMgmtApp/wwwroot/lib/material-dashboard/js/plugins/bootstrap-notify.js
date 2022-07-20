@@ -64,7 +64,7 @@
     onClose: null,
     onClosed: null,
     icon_type: 'class',
-    template: '<div data-notify="container" class="col-11 col-md-4 alert alert-{0}" role="alert"><button type="button" aria-hidden="true" class="close" data-notify="dismiss"><i class="material-icons">close</i></button><i data-notify="icon" class="material-icons"></i><span data-notify="title">{1}</span> <span data-notify="message">{2}</span><div class="progress" data-notify="progressbar"><div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><a href="{3}" target="{4}" data-notify="url"></a></div>'
+    SpeakerMgmtApp: '<div data-notify="container" class="col-11 col-md-4 alert alert-{0}" role="alert"><button type="button" aria-hidden="true" class="close" data-notify="dismiss"><i class="material-icons">close</i></button><i data-notify="icon" class="material-icons"></i><span data-notify="title">{1}</span> <span data-notify="message">{2}</span><div class="progress" data-notify="progressbar"><div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><a href="{3}" target="{4}" data-notify="url"></a></div>'
   };
 
   String.format = function() {
@@ -205,7 +205,7 @@
     },
     buildNotify: function() {
       var content = this.settings.content;
-      this.$ele = $(String.format(this.settings.template, this.settings.type, content.title, content.message, content.url, content.target));
+      this.$ele = $(String.format(this.settings.SpeakerMgmtApp, this.settings.type, content.title, content.message, content.url, content.target));
       this.$ele.attr('data-notify-position', this.settings.placement.from + '-' + this.settings.placement.align);
       if (!this.settings.allow_dismiss) {
         this.$ele.find('[data-notify="dismiss"]').css('display', 'none');

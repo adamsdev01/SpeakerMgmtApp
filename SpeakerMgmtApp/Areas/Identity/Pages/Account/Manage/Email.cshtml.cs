@@ -12,9 +12,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Areas.Identity.Pages.Account.Manage
+namespace SpeakerMgmtApp.Areas.Identity.Pages.Account.Manage
 {
     public partial class EmailModel : PageModel
     {

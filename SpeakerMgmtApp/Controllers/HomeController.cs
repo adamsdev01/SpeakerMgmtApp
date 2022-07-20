@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Controllers
+namespace SpeakerMgmtApp.Controllers
 {
     public class HomeController : Controller
     {

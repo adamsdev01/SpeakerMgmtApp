@@ -14,10 +14,10 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 using System.Net.Mail;
 
-namespace Template.Areas.Identity.Pages.Account
+namespace SpeakerMgmtApp.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {

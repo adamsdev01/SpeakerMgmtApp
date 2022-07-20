@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Areas.Identity.Pages.Account
+namespace SpeakerMgmtApp.Areas.Identity.Pages.Account
 {
    
     [AllowAnonymous]

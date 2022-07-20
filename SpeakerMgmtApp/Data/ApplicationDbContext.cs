@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Data
+namespace SpeakerMgmtApp.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

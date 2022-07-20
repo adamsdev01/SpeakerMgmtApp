@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Areas.Identity.Pages.Account
+namespace SpeakerMgmtApp.Areas.Identity.Pages.Account
 {
     public class ConfirmEmailModel : PageModel
     {

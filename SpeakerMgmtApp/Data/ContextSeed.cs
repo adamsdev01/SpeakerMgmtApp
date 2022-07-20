@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Data
+namespace SpeakerMgmtApp.Data
 {
     public class ContextSeed
     {

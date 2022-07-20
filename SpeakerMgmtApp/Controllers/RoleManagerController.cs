@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Template.Controllers
+namespace SpeakerMgmtApp.Controllers
 {
     public class RoleManagerController : Controller
     {

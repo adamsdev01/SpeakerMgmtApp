@@ -167,12 +167,12 @@ class MvcGrid {
                 return response.text();
             }).then(response => {
                 const parent = grid.element.parentElement;
-                const template = document.createElement("template");
+                const SpeakerMgmtApp = document.createElement("SpeakerMgmtApp");
                 const i = Array.from(parent.children).indexOf(grid.element);
 
-                template.innerHTML = response.trim();
+                SpeakerMgmtApp.innerHTML = response.trim();
 
-                if (template.content.firstElementChild.classList.contains("mvc-grid")) {
+                if (SpeakerMgmtApp.content.firstElementChild.classList.contains("mvc-grid")) {
                     grid.element.outerHTML = response;
                 } else {
                     throw new Error("Grid partial should only include grid declaration.");

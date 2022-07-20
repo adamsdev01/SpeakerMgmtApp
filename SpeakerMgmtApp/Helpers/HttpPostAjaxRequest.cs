@@ -1,4 +1,4 @@
-﻿namespace Template.Helpers
+﻿namespace SpeakerMgmtApp.Helpers
 {
     public static class HttpPostAjaxRequest
     {

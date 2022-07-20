@@ -1,4 +1,4 @@
-﻿namespace Template.Enums
+﻿namespace SpeakerMgmtApp.Enums
 {
     public enum Roles
     {

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Template.Models;
+using SpeakerMgmtApp.Models;
 
-namespace Template.Areas.Identity.Pages.Account.Manage
+namespace SpeakerMgmtApp.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {

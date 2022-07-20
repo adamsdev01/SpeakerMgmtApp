@@ -1,0 +1,69 @@
+﻿@*@model IEnumerable<Speaker>
+*@
+
+@model SpeakerViewModel
+@{
+    ViewData["Title"] = "Speakers";
+        Layout = "../Shared/_Layout";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <i class="fas fa-tasks fa-2x"></i>
+            <h4 class="cardHeaderIconStyle"> Speakers</h4>
+            <button type="button" class="btn btn-info btn-round float-right paddingright5" onclick="openAddSpeakerModal()">
+                <i class="fas fa-plus mr-1"></i> New Speaker 
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="card-body">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>@Html.DisplayNameFor(model => model.SpeakerPicture)</th>
+                                <th>@Html.DisplayNameFor(model => model.SpeakerFirstName)</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 0;  
+                            }
+                            @foreach(var item in Model.Speakers)
+                            {
+                                <tr>
+                                    <td class="text-center">@(i = i + 1)</td>
+                                    <td>
+                                        <img src="../Speakers/RetrieveImage/@item.Id" alt="Profile Picture" height=100 width=100 />  
+                                    </td>
+                                    <td>@item.SpeakerFirstName</td>
+                                    <td>
+                                        <div class="btn-group-sm">
+                                            <button class="btn btn-success btn-round float-right" type="button" onclick="openEditSpeakerModal(@item.Id)">
+                                                <i class="fas fa-pencil-alt font-size-12"> Edit</i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/speaker.js" asp-append-version="true"></script>
+    <style>
+        .cardHeaderIconStyle {
+            display: inline-block;
+            padding-right 15px;
+            width: 200px;
+        }
+    </style>
+}

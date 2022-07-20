@@ -423,7 +423,7 @@
       DROPUP: 'dropup',
       MENURIGHT: 'dropdown-menu-right',
       MENULEFT: 'dropdown-menu-left',
-      // to-do: replace with more advanced template/customization options
+      // to-do: replace with more advanced SpeakerMgmtApp/customization options
       BUTTONCLASS: version.major === '4' ? 'btn-light' : 'btn-default',
       POPOVERHEADER: version.major === '4' ? 'popover-header' : 'popover-title'
     }
@@ -541,7 +541,7 @@
       iconBase: 'glyphicon',
       tickIcon: 'glyphicon-ok',
       showTick: false,
-      template: {
+      SpeakerMgmtApp: {
         caret: '<span class="caret"></span>'
       },
       maxOptions: false,
@@ -704,7 +704,7 @@
           (version.major === '4' ?
             '' :
             '<span class="bs-caret">' +
-            this.options.template.caret +
+            this.options.SpeakerMgmtApp.caret +
             '</span>'
           ) +
           '</button>' +
@@ -945,24 +945,24 @@
 
         if (!this.selectpicker.view.titleOption) this.selectpicker.view.titleOption = document.createElement('option');
 
-        var elementTemplates = {
+        var elementSpeakerMgmtApps = {
             span: document.createElement('span'),
             subtext: document.createElement('small'),
             a: document.createElement('a'),
             li: document.createElement('li'),
             whitespace: document.createTextNode("\u00A0")
           },
-          checkMark = elementTemplates.span.cloneNode(false),
+          checkMark = elementSpeakerMgmtApps.span.cloneNode(false),
           fragment = document.createDocumentFragment();
 
         checkMark.className = that.options.iconBase + ' ' + that.options.tickIcon + ' check-mark';
-        elementTemplates.a.appendChild(checkMark);
-        elementTemplates.a.setAttribute('role', 'option');
+        elementSpeakerMgmtApps.a.appendChild(checkMark);
+        elementSpeakerMgmtApps.a.setAttribute('role', 'option');
 
-        elementTemplates.subtext.className = 'text-muted';
+        elementSpeakerMgmtApps.subtext.className = 'text-muted';
 
-        elementTemplates.text = elementTemplates.span.cloneNode(false);
-        elementTemplates.text.className = 'text';
+        elementSpeakerMgmtApps.text = elementSpeakerMgmtApps.span.cloneNode(false);
+        elementSpeakerMgmtApps.text.className = 'text';
 
         // Helper functions
         /**
@@ -973,7 +973,7 @@
          * @returns {HTMLElement}
          */
         var generateLI = function(content, index, classes, optgroup) {
-          var li = elementTemplates.li.cloneNode(false);
+          var li = elementSpeakerMgmtApps.li.cloneNode(false);
 
           if (content) {
             if (content.nodeType === 1 || content.nodeType === 11) {
@@ -996,7 +996,7 @@
          * @returns {string}
          */
         var generateA = function(text, classes, inline) {
-          var a = elementTemplates.a.cloneNode(true);
+          var a = elementSpeakerMgmtApps.a.cloneNode(true);
 
           if (text) {
             if (text.nodeType === 11) {
@@ -1014,7 +1014,7 @@
         };
 
         var generateText = function(options) {
-          var textElement = elementTemplates.text.cloneNode(false),
+          var textElement = elementSpeakerMgmtApps.text.cloneNode(false),
             optionSubtextElement,
             optionIconElement;
 
@@ -1024,9 +1024,9 @@
             textElement.textContent = options.text;
 
             if (options.optionIcon) {
-              var whitespace = elementTemplates.whitespace.cloneNode(false);
+              var whitespace = elementSpeakerMgmtApps.whitespace.cloneNode(false);
 
-              optionIconElement = elementTemplates.span.cloneNode(false);
+              optionIconElement = elementSpeakerMgmtApps.span.cloneNode(false);
               optionIconElement.className = that.options.iconBase + ' ' + options.optionIcon;
 
               fragment.appendChild(optionIconElement);
@@ -1034,7 +1034,7 @@
             }
 
             if (options.optionSubtext) {
-              optionSubtextElement = elementTemplates.subtext.cloneNode(false);
+              optionSubtextElement = elementSpeakerMgmtApps.subtext.cloneNode(false);
               optionSubtextElement.innerHTML = options.optionSubtext;
               textElement.appendChild(optionSubtextElement);
             }
@@ -1046,16 +1046,16 @@
         };
 
         var generateLabel = function(options) {
-          var labelTextElement = elementTemplates.text.cloneNode(false),
+          var labelTextElement = elementSpeakerMgmtApps.text.cloneNode(false),
             labelSubtextElement,
             labelIconElement;
 
           labelTextElement.textContent = options.labelEscaped;
 
           if (options.labelIcon) {
-            var whitespace = elementTemplates.whitespace.cloneNode(false);
+            var whitespace = elementSpeakerMgmtApps.whitespace.cloneNode(false);
 
-            labelIconElement = elementTemplates.span.cloneNode(false);
+            labelIconElement = elementSpeakerMgmtApps.span.cloneNode(false);
             labelIconElement.className = that.options.iconBase + ' ' + options.labelIcon;
 
             fragment.appendChild(labelIconElement);
@@ -1063,7 +1063,7 @@
           }
 
           if (options.labelSubtext) {
-            labelSubtextElement = elementTemplates.subtext.cloneNode(false);
+            labelSubtextElement = elementSpeakerMgmtApps.subtext.cloneNode(false);
             labelSubtextElement.textContent = options.labelSubtext;
             labelTextElement.appendChild(labelSubtextElement);
           }
@@ -2639,7 +2639,7 @@
 
           if (!data) {
             var config = $.extend({}, Selectpicker.DEFAULTS, $.fn.selectpicker.defaults || {}, $this.data(), options);
-            config.template = $.extend({}, Selectpicker.DEFAULTS.template, ($.fn.selectpicker.defaults ? $.fn.selectpicker.defaults.template : {}), $this.data().template, options.template);
+            config.SpeakerMgmtApp = $.extend({}, Selectpicker.DEFAULTS.SpeakerMgmtApp, ($.fn.selectpicker.defaults ? $.fn.selectpicker.defaults.SpeakerMgmtApp : {}), $this.data().SpeakerMgmtApp, options.SpeakerMgmtApp);
             $this.data('selectpicker', (data = new Selectpicker(this, config)));
           } else if (options) {
             for (var i in options) {

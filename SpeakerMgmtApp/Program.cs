@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using Template.Data;
-using Template.Models;
+using SpeakerMgmtApp.Data;
+using SpeakerMgmtApp.Models;
 using Microsoft.AspNetCore.Identity;
 using SpeakerMgmtApp.Models;
+using SpeakerMgmtApp.Services;
+using AutoMapper;
+using SpeakerMgmtApp.Models.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,9 +32,22 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 builder.Services.AddControllersWithViews();
 
+// register services
+builder.Services.AddScoped<SpeakerService>();
+
 // Enable runtime compilation for all environments
 builder.Services.AddRazorPages()
     .AddRazorRuntimeCompilation();
+
+// AutoMapper Configuration
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
 
 var app = builder.Build();
 

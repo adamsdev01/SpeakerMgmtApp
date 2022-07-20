@@ -347,7 +347,7 @@ summary {
   cursor: pointer;
 }
 
-template {
+SpeakerMgmtApp {
   display: none;
 }
 
@@ -768,7 +768,7 @@ summary {
   cursor: pointer;
 }
 
-template {
+SpeakerMgmtApp {
   display: none;
 }
 

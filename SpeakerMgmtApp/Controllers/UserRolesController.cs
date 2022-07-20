@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Template.Models;
-using Template.ViewModels;
+using SpeakerMgmtApp.Models;
+using SpeakerMgmtApp.ViewModels;
 
-namespace Template.Controllers
+namespace SpeakerMgmtApp.Controllers
 {
     [Authorize(Roles = "SuperAdmin")]
     public class UserRolesController : Controller

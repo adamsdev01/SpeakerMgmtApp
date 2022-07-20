@@ -1,4 +1,4 @@
-﻿namespace Template.ViewModels
+﻿namespace SpeakerMgmtApp.ViewModels
 {
     public class ManageUserRolesViewModel
     {
