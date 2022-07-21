@@ -1,7 +1,5 @@
-﻿@*@model IEnumerable<Speaker>
-*@
+﻿@model SpeakerViewModel
 
-@model SpeakerViewModel
 @{
     ViewData["Title"] = "Speakers";
         Layout = "../Shared/_Layout";
@@ -25,6 +23,9 @@
                                 <th class="text-center">#</th>
                                 <th>@Html.DisplayNameFor(model => model.SpeakerPicture)</th>
                                 <th>@Html.DisplayNameFor(model => model.SpeakerFirstName)</th>
+                                <th>@Html.DisplayNameFor(model => model.SpeakerLastName)</th>
+                                <th>@Html.DisplayNameFor(model => model.SpeakingDate)</th>
+                                <th>@Html.DisplayNameFor(model => model.SpeakingTime)</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -40,12 +41,22 @@
                                         <img src="../Speakers/RetrieveImage/@item.Id" alt="Profile Picture" height=100 width=100 />  
                                     </td>
                                     <td>@item.SpeakerFirstName</td>
+                                    <td>@item.SpeakerLastName</td>
+                                    <td>@item.SpeakingDate?.ToString("MM/dd/yyyy")</td>
+                                    <td>@item.SpeakingTime</td>
                                     <td>
-                                        <div class="btn-group-sm">
-                                            <button class="btn btn-success btn-round float-right" type="button" onclick="openEditSpeakerModal(@item.Id)">
-                                                <i class="fas fa-pencil-alt font-size-12"> Edit</i>
-                                            </button>
-                                        </div>
+                                        <button class="btn btn-info btn-round" type="button" onclick="openDetailSpeakerModal(@item.Id)">
+                                            <i class="far fa-address-card font-size-14"> </i>
+                                            
+                                        </button>
+                                         <button class="btn btn-success btn-round" type="button" onclick="openEditSpeakerModal(@item.Id)">
+                                            <i class="fas fa-pencil-alt font-size-14"> </i>
+                                            
+                                        </button>
+                                         <button class="btn btn-danger btn-round" type="button" onclick="openDeleteSpeakerModal(@item.Id)">
+                                            <i class="fas fa-trash-alt font-size-14"> </i>
+                                            
+                                        </button>
                                     </td>
                                 </tr>
                             }

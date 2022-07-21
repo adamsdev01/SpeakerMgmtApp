@@ -1,0 +1,119 @@
+﻿@model Speaker
+
+@{
+    ViewData["Title"] = "";
+    Layout = "";
+}
+
+<div class="card">
+    <div class="card-body">
+            <input hidden id="Id" asp-for="@Model.Id" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Speaker First Name</label>
+                        <input asp-for="@Model.SpeakerFirstName" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Speaker Last Name</label>
+                        <input asp-for="@Model.SpeakerLastName" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Qualification" class="control-label"></label>
+                        <input asp-for="@Model.Qualification" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Experience" class="control-label"></label>
+                        <input asp-for="@Model.Experience" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Speaker Picture</label>
+                    </div>
+                    <img src="../Speakers/RetrieveImage/@Model.Id" alt="Profile Picture" height=100 width=100 />  
+                </div>       
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Speaking Date</label>
+                        <input asp-for="@Model.SpeakingDate" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Speaking Time</label>
+                        <input asp-for="@Model.SpeakingTime" class="form-control" readonly/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Venue" class="control-label"></label>
+                        <input asp-for="@Model.Venue" class="form-control" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+            <br />
+            <h4>Contact Info</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactFirstName" class="control-label"> Contact First Name</label>
+                        <input asp-for="@Model.ContactFirstName" class="form-control" readonly/>
+                    
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactLastName" class="control-label">Contact Last Name</label>
+                        <input asp-for="@Model.ContactLastName" class="form-control" readonly/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactEmail" class="control-label">Contact Email</label>
+                        <input asp-for="@Model.ContactEmail" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ContactPhoneNumber" class="control-label">Contact Phone #</label>
+                        <input asp-for="@Model.ContactPhoneNumber" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="HotelName" class="control-label">Hotel Name</label>
+                        <input asp-for="HotelName" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+            <div class="form-group">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-info rounded-0"><i class="fa fa-pencil-alt"></i> Edit</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger rounded-0"><i class="fa fa-trash-alt"></i> Delete</a>
+                <a asp-action="Index" class="btn btn-sm btn-primary rounded-0">Back to List</a>
+            </div>
+    </div>
+</div>

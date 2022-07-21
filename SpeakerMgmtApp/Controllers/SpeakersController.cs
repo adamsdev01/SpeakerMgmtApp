@@ -4,6 +4,7 @@ using SpeakerMgmtApp.Services;
 using SpeakerMgmtApp.Helpers;
 using SpeakerMgmtApp.ViewModels;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace SpeakerMgmtApp.Controllers
 {
@@ -45,11 +46,6 @@ namespace SpeakerMgmtApp.Controllers
             var viewModel = new SpeakerViewModel();
             viewModel.Speaker = new Speaker();
 
-            //if (Id.Value > 0 && viewModel.Speaker.Id == 0)
-            //{
-            //    viewModel.Speaker.Id = Id.Value;    
-            //}
-
             return PartialView("Create", viewModel);
         }
 
@@ -63,6 +59,45 @@ namespace SpeakerMgmtApp.Controllers
             }
             return View(viewModel);
         }
+
+        public async Task<IActionResult> Details(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+
+            var speaker = await _context.Speakers
+                .Where(x => x.Id == Id)
+                .FirstOrDefaultAsync();
+
+            var speakerViewModel = new SpeakerViewModel()
+            {
+                Id = speaker.Id,
+                SpeakerFirstName = speaker.SpeakerFirstName,
+                SpeakerLastName = speaker.SpeakerLastName,
+                Qualification = speaker.Qualification,
+                Experience = speaker.Experience,
+                SpeakingDate = speaker.SpeakingDate,
+                SpeakingTime = speaker.SpeakingTime,
+                Venue = speaker.Venue,
+                ExistingImage = speaker.ProfilePictureData
+            };
+
+            if (speaker == null)
+            {
+                return NotFound();
+            }
+
+            return View(speaker);
+        }
+
+        //[HttpGet]
+        //public IActionResult Edit(int Id)
+        //{
+
+        //}
+
 
         public IActionResult RetrieveImage(int Id)
         {
