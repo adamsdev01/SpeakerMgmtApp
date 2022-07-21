@@ -30,3 +30,18 @@ function openDetailSpeakerModal(Id) {
         }
     });
 }
+
+function openEditSpeakerModal(Id) {
+    $.ajax({
+        type: 'GET',
+        url: '/Speakers/Edit/' + Id,
+        cache: false,
+        async: true,
+        success: function (partialView) {
+            openModal(partialView, 'Edit Speaker', 'primary', 'large');
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Unable to edit  Speaker  form.");
+        }
+    });
+}

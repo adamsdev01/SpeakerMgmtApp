@@ -92,11 +92,69 @@ namespace SpeakerMgmtApp.Controllers
             return View(speaker);
         }
 
-        //[HttpGet]
-        //public IActionResult Edit(int Id)
-        //{
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
 
-        //}
+            var speaker = await _context.Speakers.FindAsync(Id);
+
+            var speakerViewModel = new SpeakerViewModel()
+            {
+                Id = speaker.Id,
+                SpeakerFirstName = speaker.SpeakerFirstName,
+                SpeakerLastName = speaker.SpeakerLastName,
+                Qualification = speaker.Qualification,
+                Experience = speaker.Experience,
+                SpeakingDate = speaker.SpeakingDate,
+                SpeakingTime = speaker.SpeakingTime,
+                Venue = speaker.Venue,
+                ExistingImage = speaker.ProfilePictureData
+            };
+
+            if (speaker == null)
+            {
+                return NotFound();
+            }
+
+            return View(speakerViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int Id, SpeakerViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var speaker = await _context.Speakers.FindAsync(viewModel.Id);
+
+                speaker.SpeakerFirstName = viewModel.SpeakerFirstName;
+                speaker.SpeakerLastName = viewModel.SpeakerLastName;
+                speaker.Qualification = viewModel.Qualification;
+                speaker.Experience = viewModel.Experience;
+                speaker.SpeakingDate = viewModel.SpeakingDate;
+                speaker.SpeakingTime = viewModel.SpeakingTime;
+                speaker.Venue = viewModel.Venue;
+
+                if(viewModel.SpeakerPicture != null)
+                {
+                    if(viewModel.ExistingImage != null)
+                    {
+                        var filePath = Path.GetFullPath(viewModel.SpeakerPicture.FileName);
+                        System.IO.File.Delete(filePath);
+                    }
+                    speaker.ProfilePictureData = viewModel.Image;
+                }
+
+                _context.Update(speaker);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
 
 
         public IActionResult RetrieveImage(int Id)
