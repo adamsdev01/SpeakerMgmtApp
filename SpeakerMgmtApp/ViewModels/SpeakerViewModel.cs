@@ -27,13 +27,13 @@ namespace SpeakerMgmtApp.ViewModels
 
         [Required]
         [DataType(DataType.Date)]
-        [Display(Name = "Date")]
+        [Display(Name = "Speaking Date")]
         public DateTime? SpeakingDate { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        [Display(Name = "Time")]
-        public TimeSpan? SpeakingTime { get; set; }
+        [Display(Name = "Speaking Time")]
+        public DateTime? SpeakingTime { get; set; }
 
         [Required]
         [Display(Name = "Stage")]
@@ -70,18 +70,14 @@ namespace SpeakerMgmtApp.ViewModels
 
 
         // For  testing purposes
-        [Display(Name = "Speaker Name")]
+        [Display(Name = "Speaker  Name")]
         public string FullName
         {
             get
             {
-                return SpeakerFirstName + " " + SpeakerLastName;
+                return SpeakerLastName + "," + SpeakerFirstName;
             }
         }
 
-        #region Upload 
-        [Display(Name = "Upload Speaker Photo")]
-        public IFormFile? UploadPhoto { get; }
-        #endregion
     }
 }

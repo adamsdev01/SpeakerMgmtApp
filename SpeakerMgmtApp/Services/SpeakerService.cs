@@ -29,6 +29,7 @@ namespace SpeakerMgmtApp.Services
             // Add new Speaker object
             var speaker = new Speaker
             {
+                SpeakerFullName = viewModel.FullName,
                 SpeakerFirstName = viewModel.SpeakerFirstName,
                 SpeakerLastName = viewModel.SpeakerLastName,
                 Qualification = viewModel.Qualification,

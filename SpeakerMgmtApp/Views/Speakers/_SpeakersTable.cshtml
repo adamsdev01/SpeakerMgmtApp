@@ -22,6 +22,7 @@
                             <tr>
                                 <th class="text-center">#</th>
                                 <th>@Html.DisplayNameFor(model => model.SpeakerPicture)</th>
+                                <th>@Html.DisplayNameFor(model => model.FullName)</th>
                                 <th>@Html.DisplayNameFor(model => model.SpeakerFirstName)</th>
                                 <th>@Html.DisplayNameFor(model => model.SpeakerLastName)</th>
                                 <th>@Html.DisplayNameFor(model => model.SpeakingDate)</th>
@@ -40,10 +41,11 @@
                                     <td>
                                         <img src="../Speakers/RetrieveImage/@item.Id" alt="Profile Picture" height=100 width=100 />  
                                     </td>
+                                    <td>@item.SpeakerFullName</td>
                                     <td>@item.SpeakerFirstName</td>
                                     <td>@item.SpeakerLastName</td>
                                     <td>@item.SpeakingDate?.ToString("MM/dd/yyyy")</td>
-                                    <td>@item.SpeakingTime</td>
+                                    <td>@item.SpeakingTime?.ToShortTimeString()</td>
                                     <td>
                                         <button class="btn btn-info btn-round" type="button" onclick="openDetailSpeakerModal(@item.Id)">
                                             <i class="far fa-address-card font-size-14"> </i>
